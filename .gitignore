@@ -1,4 +1,7 @@
-
+venv/
+./venv
+venv
+/venv
 # Created by https://www.gitignore.io/api/code,django
 # Edit at https://www.gitignore.io/?templates=code,django
 
