@@ -16,9 +16,6 @@ class ProjectSerializer(serializers.ModelSerializer):
         return ReviewSerializer(obj.projects.all(),many=True).data
 
 class ReviewSerializer(serializers.ModelSerializer):
-    # usability_avg = serializers.SerializerMethodField()
-    # design_avg = serializers.SerializerMethodField()
-    # creativity_avg = serializers.SerializerMethodField()
     avarage = serializers.SerializerMethodField()
     class Meta:
         model = Review
@@ -31,7 +28,7 @@ class ReviewSerializer(serializers.ModelSerializer):
         )
     def get_avarage(self,obj):
         avg = (obj.usablity + obj.creativity + obj.design )
-        print(avg)
+        # print(avg)
         avg1 = avg / 3
         return avg1
 class ReviewCreateSerializer(serializers.ModelSerializer):
